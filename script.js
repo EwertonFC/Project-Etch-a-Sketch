@@ -1,5 +1,5 @@
 let container = document.querySelector("#container")
-let quadradinhos = 10
+let quadradinhos = 16
 let tamanhoQuadradinhos = 400 / quadradinhos 
 
 for (let i = 0; i < quadradinhos**2; i++){
@@ -18,21 +18,12 @@ cadaquadrado.forEach(element => {
 });
 
 
+let botaoLimpar = document.querySelector("#limpar")
+botaoLimpar.addEventListener("click", ()=>{
+    cadaquadrado.forEach(element => {
+        if(element.style.backgroundColor === "black"){
+            element.style.backgroundColor = "white"
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    })
+})
