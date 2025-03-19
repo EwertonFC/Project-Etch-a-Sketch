@@ -1,22 +1,22 @@
 let container = document.querySelector("#container")
 
-function quantidadeQuadrados(padrao = 16){
+function quantidadeQuadrados(padrao = 16) {
     let botaoConfigurar = document.querySelector("#configure")
     botaoConfigurar.addEventListener("click", () => {
         let quantidade = prompt("Digita ai")
         while (container.firstChild) {
             container.removeChild(container.firstChild);
         }
-        configurarTela(quantidade)  
+        configurarTela(quantidade)
     })
     return padrao
 }
 
-function configurarTela(quantidadeQuadrados){
+function configurarTela(quantidadeQuadrados) {
     for (let i = 0; i < quantidadeQuadrados ** 2; i++) {
         let grid = document.createElement("div")
-        grid.style.width = `${500/quantidadeQuadrados - 2}px`
-        grid.style.height = `${500/quantidadeQuadrados - 2}px`
+        grid.style.width = `${500 / quantidadeQuadrados - 2}px`
+        grid.style.height = `${500 / quantidadeQuadrados - 2}px`
         container.appendChild(grid)
         grid.setAttribute("class", "grid")
     }
@@ -24,7 +24,7 @@ function configurarTela(quantidadeQuadrados){
     limparQuadrados()
 }
 
-function pintarQuadrados(){
+function pintarQuadrados() {
     let cadaquadrado = document.querySelectorAll(".grid")
     cadaquadrado.forEach(element => {
         element.addEventListener("mousemove", () => {
@@ -33,7 +33,7 @@ function pintarQuadrados(){
     });
 }
 
-function limparQuadrados(){
+function limparQuadrados() {
     let cadaquadrado = document.querySelectorAll(".grid")
     let botaoLimpar = document.querySelector("#limpar")
     botaoLimpar.addEventListener("click", () => {
