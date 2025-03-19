@@ -3,7 +3,7 @@ let container = document.querySelector("#container")
 function quantidadeQuadrados(padrao = 16) {
     let botaoConfigurar = document.querySelector("#configure")
     botaoConfigurar.addEventListener("click", () => {
-        let quantidade = prompt("Digita ai")
+        let quantidade = prompt("Digite a configuracao da sua tela. Se digitar '50', entao sua configuaracaoo sera 50x50")
         while (container.firstChild) {
             container.removeChild(container.firstChild);
         }
