@@ -38,7 +38,7 @@ function limparQuadrados() {
     let botaoLimpar = document.querySelector("#limpar")
     botaoLimpar.addEventListener("click", () => {
         cadaquadrado.forEach(element => {
-            if (element.style.backgroundColor === "black") {
+            if (element.style.backgroundColor === "rgb(66, 60, 60)") {
                 element.style.backgroundColor = "white"
             }
 
