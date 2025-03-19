@@ -4,10 +4,14 @@ function quantidadeQuadrados(padrao = 16) {
     let botaoConfigurar = document.querySelector("#configure")
     botaoConfigurar.addEventListener("click", () => {
         let quantidade = prompt("Digite a configuracao da sua tela. Se digitar '50', entao sua configuaracaoo sera 50x50")
-        while (container.firstChild) {
-            container.removeChild(container.firstChild);
+        if (quantidade <= 0 || quantidade > 100){
+            alert("O numero deve ser maior que zero e menor ou igual a 100.")
+        }else {
+            while (container.firstChild) {
+                container.removeChild(container.firstChild);
+            }
+            configurarTela(quantidade)
         }
-        configurarTela(quantidade)
     })
     return padrao
 }
