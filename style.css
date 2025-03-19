@@ -12,8 +12,8 @@ body{
     display: flex;
     border: 2px black solid;
     box-sizing: content-box;
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     flex-wrap: wrap;
     align-items: center;
 }

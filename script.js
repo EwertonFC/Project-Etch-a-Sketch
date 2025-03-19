@@ -1,29 +1,51 @@
 let container = document.querySelector("#container")
-let quadradinhos = 16
-let tamanhoQuadradinhos = 400 / quadradinhos
 
-for (let i = 0; i < quadradinhos ** 2; i++) {
-    let grid = document.createElement("div")
-    grid.style.width = `${tamanhoQuadradinhos - 2}px`
-    grid.style.height = `${tamanhoQuadradinhos - 2}px`
-    container.appendChild(grid)
-    grid.setAttribute("class", "grid")
+function quantidadeQuadrados(padrao = 16){
+    let botaoConfigurar = document.querySelector("#configure")
+    botaoConfigurar.addEventListener("click", () => {
+        let quantidade = prompt("Digita ai")
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+        configurarTela(quantidade)  
+    })
+    return padrao
 }
 
-let cadaquadrado = document.querySelectorAll(".grid")
-cadaquadrado.forEach(element => {
-    element.addEventListener("mouseenter", () => {
-        element.style.backgroundColor = "black"
-    })
-});
+function configurarTela(quantidadeQuadrados){
+    for (let i = 0; i < quantidadeQuadrados ** 2; i++) {
+        let grid = document.createElement("div")
+        grid.style.width = `${500/quantidadeQuadrados - 2}px`
+        grid.style.height = `${500/quantidadeQuadrados - 2}px`
+        container.appendChild(grid)
+        grid.setAttribute("class", "grid")
+    }
+    pintarQuadrados()
+    limparQuadrados()
+}
 
-
-let botaoLimpar = document.querySelector("#limpar")
-botaoLimpar.addEventListener("click", () => {
+function pintarQuadrados(){
+    let cadaquadrado = document.querySelectorAll(".grid")
     cadaquadrado.forEach(element => {
-        if (element.style.backgroundColor === "black") {
-            element.style.backgroundColor = "white"
-        }
+        element.addEventListener("mousemove", () => {
+            element.style.backgroundColor = "black"
+        })
+    });
+}
 
+function limparQuadrados(){
+    let cadaquadrado = document.querySelectorAll(".grid")
+    let botaoLimpar = document.querySelector("#limpar")
+    botaoLimpar.addEventListener("click", () => {
+        cadaquadrado.forEach(element => {
+            if (element.style.backgroundColor === "black") {
+                element.style.backgroundColor = "white"
+            }
+
+        })
     })
-})
+
+}
+
+configurarTela(quantidadeQuadrados())
+
