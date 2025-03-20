@@ -54,6 +54,7 @@ h1{
     border: 2px white solid;
     border-radius: 10px;
     height: 45px;
+    cursor: pointer;
 }
 
 .mudarCor{
