@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Traço Magico</h1>
-    <div id="container"></div>
-    <div id="botoes">
-        <button id="limpar">Limpar Tela</button>
-        <button id="configure">Configure a tela</button>
-        
+
+    <div id="flex">
+        <div id="lateral">
+            <div>
+                <p id="tituloModoJogo"> Escolha o estilo de jogo:</p>
+            </div>
+            <div id="container-cor">
+                <button id="colorido">Colorido</button>
+                <button id="preto">Preto</button>
+            </div>
+        </div>
+        <div>
+            <h1>Traço Magico</h1>
+            <div id="main">
+                <div id="container"></div>
+                <div id="botoes">
+                    <button id="limpar">Limpar Tela</button>
+                    <button id="configure">Configure a tela</button>
+                </div>
+            </div>
+        </div>
     </div>
+
+
 </body>
 <script src="script.js"></script>
+
 </html>

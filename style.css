@@ -9,6 +9,8 @@ body{
 }
 
 h1{
+    display: flex;
+    justify-content: center;
     color: white;
     background-color: rgb(66, 60, 60);
     border: 2px white solid;
@@ -44,13 +46,14 @@ h1{
     width: 400px;
 }
 
-#limpar, #configure{
+#limpar, #configure, #colorido, #preto{
     background-color: rgb(66, 60, 60);
     color: white;
     font-size: large;
     font-weight: bolder;
     border: 2px white solid;
     border-radius: 10px;
+    height: 45px;
 }
 
 .mudarCor{
@@ -60,4 +63,41 @@ h1{
     border: 1px blue solid;
     flex-wrap: wrap;
     background-color: white;
+}
+
+#container-cor{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#tela {
+    display: flex;
+    width: 500px;
+    height: 500px;
+    gap: 10px;
+}
+
+#tituloModoJogo{
+    margin: 5px;
+    text-align: center;
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+}
+
+#lateral{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#flex{
+    display: flex;
+    gap: 10px;
 }

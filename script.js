@@ -30,11 +30,24 @@ function configurarTela(quantidadeQuadrados) {
 
 function pintarQuadrados() {
     let cadaquadrado = document.querySelectorAll(".grid")
-    cadaquadrado.forEach(element => {
-        element.addEventListener("mousemove", () => {
-            element.style.backgroundColor = "black"
-        })
-    });
+    let preto = document.querySelector("#preto")
+    let colorido = document.querySelector("#colorido")
+    let click = ""
+
+    preto.addEventListener("click", () => {
+        cadaquadrado.forEach(element => {
+            element.addEventListener("mousemove", () => {
+                element.style.backgroundColor = "black"
+            })
+        });
+    })
+    colorido.addEventListener("click", () => {
+        cadaquadrado.forEach(element => {
+            element.addEventListener("mousemove", () => {
+                element.style.backgroundColor = mudarCor()
+            })
+        });
+    })
 }
 
 function limparQuadrados() {
@@ -42,13 +55,18 @@ function limparQuadrados() {
     let botaoLimpar = document.querySelector("#limpar")
     botaoLimpar.addEventListener("click", () => {
         cadaquadrado.forEach(element => {
-            if (element.style.backgroundColor === "black") {
+            if (element.style.backgroundColor != "white") {
                 element.style.backgroundColor = "white"
             }
 
         })
     })
 
+}
+
+function mudarCor(){
+    let cor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+    return cor
 }
 
 configurarTela(quantidadeQuadrados())
